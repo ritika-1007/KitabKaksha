@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Invoice</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+</head>
+<style>
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		margin-bottom: 20px;
+	}
+
+	th, td {
+		border: 1px solid #ddd;
+		padding: 8px;
+		text-align: left;
+	}
+
+	td {
+		background-color: #f2f2f2;
+		font-size:15px;
+	}
+	</style>
+<body>
+	<div class="container">
+		
+		<div class="row justify-content-md-center">
+	        <div class="col-md-12 cart_info">
+		        <div class="ordered-info">
+					
+					<h1><pre>Kitab Kaksha                                             Email: kitabkasha@gmail.com</pre></h1>
+					<h1><pre>                                                         Mobile No: 9999999999</pre></h1>
+					<br>
+
+					<table>
+						<tbody>
+							    
+								<tr>
+									<td>Order ID</td>
+									<td>#201823{{ order.id }}</td>
+								</tr>
+								<tr>
+									<td>Date</td>
+									<td>{{order.created}}</td>
+								</tr>
+								<tr>
+									<td>Book Quantity</td>
+									<td>{{ order.totalbook }}</td>
+								</tr>
+								<tr>
+									<td>Customer Name</td>
+									<td>{{ order.name }}</td>
+								</tr>
+								<tr>
+									<td>Contact No.</td>
+									<td>{{ order.phone }}</td>
+								</tr>
+								<tr>
+									<td>Email</td>
+									<td>{{ order.email }}</td>
+								</tr>
+								<tr>
+									<td>Payment Method</td>
+									<td>{{ order.payment_method }}</td>
+								</tr>
+								<tr>
+									<td>Shipping Address</td>
+									<td>{{ order.division }}:{{ order.zip_code }}, {{ order.district }}, {{ order.address }}</td>
+								</tr>
+						</tbody>
+					</table>
+		        </div>
+	        </div>
+		</div>
+	</div> 
+</body>
+</html>
+
