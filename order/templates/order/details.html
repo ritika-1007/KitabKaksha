@@ -22,7 +22,7 @@
 					                <td><a href="{% url 'store:book' id=item.book.id %}">{{ item.book.name }}</a></td>
 					                <td class="cart_quantity">₹ {{ item.book.price }}</td>
 					                <td class="cart_quantity">{{ item.quantity }}</td>
-					                <td>{{ item.book.price|subtotal:item.quantity }} $.</td>
+					                <td>₹ {{ item.book.price|subtotal:item.quantity }}</td>
 					            </tr>
 					            {% endfor %}
 					        </tbody>

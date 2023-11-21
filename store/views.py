@@ -8,7 +8,7 @@ from .forms import RegistrationForm, ReviewForm
 
 
 def index(request):
-    newpublished = Book.objects.order_by('-created')[:15]
+    newpublished = Book.objects.all().reverse()[:15]
     slide = Slider.objects.order_by('-created')[:3]
     context = {
         "newbooks":newpublished,
